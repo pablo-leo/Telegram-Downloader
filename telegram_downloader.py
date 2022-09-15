@@ -7,7 +7,7 @@ from telethon.sync import TelegramClient, events
 # https://my.telegram.org/apps
 # ------------------------------------------------------------------ #
 API_ID = -1 # PLACE HERE THE API ID OF YOUR TELEGRAM APP
-API_HASH = "" # PLACE HERE THE API HASH OF YOUR TELEGRAM APP
+API_HASH = '' # PLACE HERE THE API HASH OF YOUR TELEGRAM APP
 
 
 def download(videos_dir, group_id, limit):
@@ -27,6 +27,11 @@ def download(videos_dir, group_id, limit):
 
         # get the messages from the telegram group
         messages = client.get_messages(group_id, limit=limit)
+
+        # filter messages without files
+        messages = [
+            msg for msg in messages if (msg.file is not None)
+        ]
 
         if len(messages) == 0:
             print('The group is empty. Nothing to download')
