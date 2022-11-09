@@ -1,0 +1,8 @@
+certifi==2018.8.24
+pyaes==1.6.1
+pyasn1==0.4.8
+rsa==4.7.2
+Telethon==1.24.0
+telethon-tgcrypto==0.0.3
+TgCrypto==1.2.3
+tqdm==4.60.0

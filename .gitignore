@@ -1,2 +1,4 @@
 *.txt
 *.session
+*.session-journal
+!requirements.txt
